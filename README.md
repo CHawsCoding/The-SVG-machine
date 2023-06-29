@@ -53,6 +53,8 @@ node index
  [Video]()
  
 And a couple of screenshots from the application
+![screenshot of generated SVG](/assets/Screen%20Shot%202023-06-28%20at%2011.17.45%20PM.png)
+![Screenshot of prompts](/assets/Screen%20Shot%202023-06-28%20at%2011.20.18%20PM.png)
 
 ## Questions
 
