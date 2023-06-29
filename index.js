@@ -30,22 +30,25 @@ function generateLogo(shape, color, text) {
 
   switch (shape) {
     case "Circle":
-      logo = new Circle(50); // Specify the circle's radius here
+      logo = new Circle(50); 
       break;
     case "Square":
-      logo = new Square(100); // Specify the square's side length here
+      logo = new Square(100); 
       break;
     case "Triangle":
-      logo = new Triangle(100); // Specify the triangle's side length here
+      logo = new Triangle(100); 
       break;
     default:
       throw new Error("Invalid shape selected");
   }
 
+  const shapeMarkup = logo
+    .getSvgMarkup()
+    .replace(/fill="[^"]+"/g, `fill="${color}"`);
   const svgMarkup = `
     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100">
-      ${logo.getSvgMarkup()}
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${color}">${text}</text>
+      ${shapeMarkup}
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">${text}</text>
     </svg>
   `;
 
@@ -57,7 +60,8 @@ async function run() {
     const { shape, color, text } = await promptUser();
     const svgMarkup = generateLogo(shape, color, text);
 
-    const fileName = "logo"; // Specify the file name here
+    const timestamp = Date.now();
+    const fileName = `logo_${timestamp}`;
     const filePath = `examples/${fileName}.svg`;
 
     fs.writeFileSync(filePath, svgMarkup);

@@ -9,6 +9,7 @@ This project was created to generate SVG logos using input from the user. There 
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [Deployed](#deployed)
 - [Questions](#questions)
 - [Criteria](#criteria)
 
@@ -45,6 +46,13 @@ npm install
 Once these steps are done you can run the actual SVG Logo generator using the follwoing command:
 
 node index
+
+## Deployed
+ this application isn't deployed to the web but here is a link to a video walkthrough:
+
+ [Video]()
+ 
+And a couple of screenshots from the application
 
 ## Questions
 
